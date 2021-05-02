@@ -4,9 +4,9 @@
 
 # Contacts App Introduction
 
-This project is a code-along with the first project in the React Nanodegree program by Udacity.
+This is a code-along project within the React Nanodegree program by Udacity.
 
-Most of the commits in this repository correspond to videos in the program.
+Most of the commits in this repository correspond to videos in the React program.
 
 ## Project Setup
 
