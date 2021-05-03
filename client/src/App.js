@@ -9,6 +9,14 @@ class App extends Component {
     contacts: [],
   };
 
+  componentDidMount() {
+    ContactsAPI.getAll().then((contacts) => {
+      this.setState({
+        contacts,
+      });
+    });
+  }
+
   // Create a new contact
   createContact = (contact) => {
     ContactsAPI.create(contact).then((contact) => {
