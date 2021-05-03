@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListContacts from './ListContacts';
 import * as ContactsAPI from './utils/ContactsAPI';
+import CreateContact from './CreateContact';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -8,7 +9,13 @@ class App extends Component {
     contacts: [],
   };
 
-
+  // Create a new contact
+  createContact = (contact) => {
+    ContactsAPI.create(contact).then((contact) => {
+      this.setState((currentState) => ({
+        contacts: currentState.contacts.concat([contact]),
+      }));
+    });
   };
 
   // Remove a contact from the list
@@ -19,6 +26,7 @@ class App extends Component {
       }),
     }));
 
+    ContactsAPI.remove(contact);
   };
 
   render() {
